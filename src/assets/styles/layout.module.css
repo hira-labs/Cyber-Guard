@@ -1,0 +1,116 @@
+/* General Container */
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: "Helvetica Neue", sans-serif;
+  background-color: #121212; /* Fallback background color */
+  background: url('../images/cyberGaurdbg.png') center center/cover no-repeat !important;
+  background-attachment: fixed;
+}
+
+.navbar {
+  background-color: rgba(13, 27, 42, 0.9);
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.logoSection {
+  display: flex;
+  align-items: center;
+}
+
+.logoWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  margin-right: 0.5rem;
+}
+
+.navLinksContainer {
+  display: flex;
+  gap: 1rem;
+}
+
+.navLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+.loginButton {
+  background-color: #1976d2;
+  color: white;
+}
+
+.navbarSpacer {
+  height: 64px; /* Matches default AppBar height */
+}
+
+.mainContent {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  max-height: calc(100vh - 64px - 60px); /* viewport height minus navbar and footer */
+  overflow: auto;
+}
+
+.footer {
+  padding: 0.75rem 1rem;
+  background-color: rgba(13, 27, 42, 0.9);
+  color: #d3d3d3;
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.copyright {
+  color: #d3d3d3;
+}
+
+.footerLinks {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footerLink {
+  color: #d3d3d3;
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+
+.footerLink:hover {
+  text-decoration: underline;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .toolbar {
+    flex-direction: column;
+    padding: 0.75rem 0;
+  }
+  
+  .navLinksContainer {
+    margin-top: 0.5rem;
+  }
+  
+  .mainContent {
+    padding: 1rem;
+  }
+  
+  .footerContent {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

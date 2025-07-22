@@ -1,0 +1,84 @@
+.securityTipsContainer {
+    padding: 20px;
+    background-color: rgba(13, 27, 42, 0.9);
+    color: white;
+    position: absolute;
+    top: 20px;
+    right: 0;
+    width: 100%;
+    max-width: 1200px;
+    transition: all 0.3s ease;
+    margin-top: 80px;
+    height: 500px;
+    overflow-y: auto;
+    border-radius: 10px; /* Make the container edges rounded */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Add shadow */
+  }
+  
+  /* Custom Scrollbar */
+  .securityTipsContainer::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .securityTipsContainer::-webkit-scrollbar-track {
+    background: #444;
+    border-radius: 10px;
+  }
+  
+  .securityTipsContainer::-webkit-scrollbar-thumb {
+    background-color: #4caf50;
+    border-radius: 10px;
+    border: 2px solid #333;
+  }
+  
+  .card {
+    background-color: #333;
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    margin: auto;
+    height: 250px; /* Set a fixed height for cards */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Optional: Add shadow to cards */
+  }
+  
+  /* Adjust width for responsiveness */
+  .card .MuiCardContent-root {
+    padding: 20px;
+  }
+  
+  .card .MuiButton-root {
+    margin-top: auto;
+  }
+  
+  @media (max-width: 600px) {
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .title {
+      margin-bottom: 10px;
+    }
+  
+    .card {
+      width: 90%;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .securityTipsContainer {
+      width: 700px;
+      margin-top: 80px;
+      margin-right: 40px;
+    }
+  }
+  
+  @media (min-width: 1440px) {
+    .securityTipsContainer {
+      width: 1200px;
+    }
+  }
+  

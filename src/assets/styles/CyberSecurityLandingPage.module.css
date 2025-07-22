@@ -1,0 +1,797 @@
+/* General Container */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: url('../images/cyberGaurdbg.png') center center/cover no-repeat;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #f5f5f7;
+  width: 100%;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Remove frosted glass overlay */
+.container:before {
+  display: none; /* Removes the frosted background overlay */
+}
+
+/* Navbar */
+.navbar {
+  background-color: rgba(25, 28, 36, 0.75) !important;
+  backdrop-filter: blur(15px) !important;
+  -webkit-backdrop-filter: blur(15px) !important;
+  padding: 0.8rem 0;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid rgba(85, 193, 183, 0.15);
+}
+
+.navTitle {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #e7f094;
+  letter-spacing: 0.3px;
+}
+
+.navLogo {
+  height: 22px;
+  margin-right: 8px;
+  color: #55c1b7;
+}
+
+.menuButton {
+  display: none;
+}
+
+.navLinks {
+  display: flex;
+  gap: 2rem;
+}
+
+.navLink {
+  color: #f0f0f0;
+  font-weight: 500;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  position: relative;
+  letter-spacing: 0.3px;
+}
+
+.navLink:hover {
+  color: #55c1b7;
+}
+
+.navLink.active:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #55c1b7;
+  bottom: -4px;
+  left: 0;
+}
+
+@media (max-width: 600px) {
+  .menuButton {
+    display: block;
+  }
+  .navLinks {
+    display: none;
+  }
+}
+
+/* Main Content */
+.mainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem 8%;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.contentWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem; /* Increased from any previous value to add more space between elements */
+}
+
+.contentLeft {
+  max-width: 580px;
+  text-align: left;
+  background-color: rgba(15, 20, 30, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid rgba(85, 193, 183, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  height: 380px; /* Fixed height to match the security visual */
+  display: flex;
+  flex-direction: column;
+  margin-right: 2rem; /* Adding extra margin to the right of the card */
+}
+
+.contentRight {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  border: none; /* Ensure no border */
+  box-shadow: none; /* Ensure no shadow */
+  margin-left: 2rem; /* Adding extra margin to the left of the animation */
+}
+
+/* Tag line */
+.tagline {
+  color: #55c1b7;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 1rem;
+}
+
+/* Futuristic typing effect container */
+.typingContainer {
+  position: relative;
+  margin-bottom: 1.5rem;
+  height: 80px; /* Fixed height for the typing area */
+}
+
+.mainHeading {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  line-height: 1.2;
+  font-weight: 700;
+  color: #f0f0f0;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.5px;
+}
+
+/* Add accent color for the typed text */
+.mainHeading span {
+  color: #e7f094;
+  text-shadow: 0 0 10px rgba(231, 240, 148, 0.2);
+}
+
+/* Static Tagline */
+.staticTagline {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  font-weight: 400;
+  max-width: 90%;
+  letter-spacing: 0.2px;
+}
+
+/* Animation visual */
+.securityVisual {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  border: none;
+  overflow: visible; /* Allow overflow to prevent cutting off parts of animation */
+}
+
+.securityRing {
+  width: 320px;
+  height: 320px;
+  position: absolute;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  animation: rotate 20s linear infinite;
+  box-shadow: none; /* Removes any shadow that might appear as a bar */
+}
+
+.ring1 {
+  border-top-color: #55c1b7;
+  border-bottom-color: #55c1b7;
+  width: 320px;
+  height: 320px;
+  box-shadow: 0 0 20px rgba(85, 193, 183, 0.2);
+}
+
+.ring2 {
+  border-left-color: #e7f094;
+  border-right-color: rgba(231, 240, 148, 0.5);
+  width: 260px;
+  height: 260px;
+  top: 30px;
+  left: 30px;
+  animation-direction: reverse;
+  animation-duration: 15s;
+}
+
+.ring3 {
+  border: 1.5px dotted rgba(85, 193, 183, 0.5);
+  width: 200px;
+  height: 200px;
+  top: 60px;
+  left: 60px;
+  animation-duration: 25s;
+}
+
+/* Add new interior ring with the requested color */
+.ring4 {
+  border: 2px solid #ff6f91;
+  width: 140px;
+  height: 140px;
+  top: 90px;
+  left: 90px;
+  animation-duration: 12s;
+  box-shadow: 0 0 15px rgba(255, 111, 145, 0.3);
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Call to Action Buttons */
+.ctaButtons {
+  display: flex;
+  gap: 1rem;
+}
+
+.primaryBtn {
+  padding: 0.65rem 1.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: #55c1b7;
+  color: #0f141e;
+  border: none;
+  box-shadow: 0 2px 8px rgba(85, 193, 183, 0.25);
+  text-transform: none;
+  letter-spacing: 0.3px;
+}
+
+.primaryBtn:hover {
+  background-color: #4db6ac;
+  box-shadow: 0 4px 12px rgba(85, 193, 183, 0.4);
+  transform: translateY(-1px);
+}
+
+.secondaryBtn {
+  padding: 0.65rem 1.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: rgba(15, 20, 30, 0.5);
+  color: #e7f094;
+  border: 1px solid rgba(231, 240, 148, 0.5);
+  text-transform: none;
+  letter-spacing: 0.3px;
+  backdrop-filter: blur(5px);
+}
+
+.secondaryBtn:hover {
+  background-color: rgba(231, 240, 148, 0.1);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(231, 240, 148, 0.15);
+}
+
+/* Loading animation */
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 1rem;
+}
+
+.loadingText {
+  color: #55c1b7;
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+
+/* Threat indicators */
+.threatIndicator {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #ff6f91;
+  z-index: 2;
+  box-shadow: 0 0 10px rgba(255, 111, 145, 0.5);
+}
+
+.threatIndicator1 {
+  top: 10%;
+  right: 25%;
+  opacity: 0.8;
+}
+
+.threatIndicator2 {
+  top: 30%;
+  left: 20%;
+  opacity: 0.6;
+}
+
+.threatIndicator3 {
+  bottom: 20%;
+  right: 15%;
+  opacity: 0.9;
+}
+
+.threatIndicator4 {
+  bottom: 40%;
+  left: 10%;
+  opacity: 0.7;
+}
+
+/* Footer */
+.footer {
+  background-color: rgba(15, 20, 30, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: rgba(255, 255, 255, 0.7);
+  padding: 1.2rem;
+  text-align: center;
+  font-size: 0.8rem;
+  position: relative;
+  z-index: 2;
+  border-top: 1px solid rgba(85, 193, 183, 0.15);
+}
+
+/* Responsive adjustments */
+@media (max-width: 960px) {
+  .contentWrapper {
+    flex-direction: column;
+    gap: 3rem; /* Adding gap for vertical stacking as well */
+  }
+  
+  .contentLeft {
+    text-align: center;
+    max-width: 100%;
+    padding: 1.8rem;
+  }
+  
+  .staticTagline {
+    max-width: 100%;
+  }
+  
+  .ctaButtons {
+    justify-content: center;
+  }
+}
+
+/* Frosted card effect */
+.cardFrost {
+  background: transparent; /* Remove background */
+  backdrop-filter: none; /* Remove blur effect */
+  -webkit-backdrop-filter: none;
+  border-radius: 8px;
+  border: none; /* Remove border */
+  padding: 1.8rem;
+  box-shadow: none; /* Remove shadow */
+}
+
+/* Circuit dots animation */
+.circuitDot {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background-color: #55c1b7;
+  border-radius: 50%;
+  opacity: 0;
+  animation: pulse 4s infinite;
+}
+
+/* Add variation for different colored dots */
+.circuitDot.accent {
+  background-color: #e7f094;
+}
+
+.circuitDot.danger {
+  background-color: #ff6f91;
+}
+
+/* Make some dots larger for variety */
+.circuitDot.large {
+  width: 6px;
+  height: 6px;
+}
+
+/* Make some dots smaller */
+.circuitDot.small {
+  width: 2px;
+  height: 2px;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0); opacity: 0; }
+  50% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(0); opacity: 0; }
+}
+
+/* Signup page styles */
+.signupContainer {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('../images/cyberGaurdbg.png') center center/cover no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+.signupFormContainer {
+  position: relative;
+  z-index: 10;
+  padding-top: 30px; /* Reduced from 50px */
+}
+
+.circuitContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.circuitDot {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: rgba(85, 193, 183, 0.5);
+  border-radius: 50%;
+  animation: pulse 4s infinite;
+}
+
+.circuitDot.accent {
+  background-color: rgba(255, 87, 34, 0.6);
+}
+
+.circuitDot.danger {
+  background-color: rgba(244, 67, 54, 0.5);
+}
+
+.circuitDot.large {
+  width: 8px;
+  height: 8px;
+}
+
+.circuitDot.small {
+  width: 3px;
+  height: 3px;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+}
+
+.backLink {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 100;
+}
+
+.backButton {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: #55c1b7 !important;
+  transition: all 0.3s ease;
+}
+
+.backButton:hover {
+  background-color: rgba(85, 193, 183, 0.2) !important;
+  transform: translateX(-3px);
+}
+
+.formBox {
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+.formAppear {
+  animation: formAppear 0.7s forwards ease-out;
+}
+
+@keyframes formAppear {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.formTitle {
+  margin-bottom: 1rem !important; /* Reduced from 2rem */
+}
+
+.underline {
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #55c1b7, #ff5722, transparent);
+  border-radius: 2px;
+}
+
+.securityBadge {
+  width: 40px; /* Reduced from 50px */
+  height: 40px; /* Reduced from 50px */
+  border-radius: 50%;
+  background: linear-gradient(135deg, #55c1b7, #1a1a2e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px; /* Reduced bottom margin from 20px */
+  box-shadow: 0 0 15px rgba(85, 193, 183, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.securityBadge::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, transparent 50%, rgba(85, 193, 183, 0.3) 100%);
+  animation: badgePulse 3s infinite;
+}
+
+@keyframes badgePulse {
+  0% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+}
+
+.securityPulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 1px solid rgba(85, 193, 183, 0.2);
+  opacity: 0;
+  animation: pulseRing 4s infinite;
+  z-index: -1;
+}
+
+@keyframes pulseRing {
+  0% {
+    width: 100px;
+    height: 100px;
+    opacity: 0.2;
+  }
+  100% {
+    width: 500px;
+    height: 500px;
+    opacity: 0;
+  }
+}
+
+.cornerAccent1, .cornerAccent2 {
+  position: absolute;
+  width: 60px; /* Reduced from 80px */
+  height: 60px; /* Reduced from 80px */
+  z-index: -1;
+}
+
+.cornerAccent1 {
+  top: 0;
+  right: 0;
+  border-top: 2px solid rgba(85, 193, 183, 0.5);
+  border-right: 2px solid rgba(85, 193, 183, 0.5);
+}
+
+.cornerAccent2 {
+  bottom: 0;
+  left: 0;
+  border-bottom: 2px solid rgba(255, 87, 34, 0.5);
+  border-left: 2px solid rgba(255, 87, 34, 0.5);
+}
+
+.formField {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.formField:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.ctaButton {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaButton:hover {
+  transform: translateY(-3px);
+}
+
+.submitBtn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+}
+
+.submitBtn:hover::after {
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    left: 100%;
+  }
+}
+
+.authLink {
+  color: #55c1b7;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.authLink::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #55c1b7;
+  transition: width 0.3s ease;
+}
+
+.authLink:hover {
+  color: #ff5722;
+}
+
+.authLink:hover::after {
+  width: 100%;
+  background-color: #ff5722;
+}
+
+.successMessage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px; /* Reduced from 20px */
+}
+
+.successIcon {
+  position: relative;
+  width: 60px; /* Reduced from 80px */
+  height: 60px; /* Reduced from 80px */
+  margin-bottom: 10px; /* Reduced from 20px */
+}
+
+.successIconRing {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px; /* Reduced from 80px */
+  height: 60px; /* Reduced from 80px */
+  border: 3px solid #55c1b7; /* Reduced from 4px */
+  border-radius: 50%;
+  animation: circleExpand 0.8s ease forwards;
+}
+
+.checkmark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 60px;
+  border-right: 4px solid #55c1b7;
+  border-bottom: 4px solid #55c1b7;
+  transform: translate(-50%, -70%) rotate(45deg) scale(0);
+  animation: checkmarkAppear 0.4s ease 0.8s forwards;
+}
+
+@keyframes circleExpand {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes checkmarkAppear {
+  0% {
+    transform: translate(-50%, -70%) rotate(45deg) scale(0);
+  }
+  100% {
+    transform: translate(-50%, -70%) rotate(45deg) scale(1);
+  }
+}
+
+/* Add these login-specific styles */
+
+.loginContainer {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('../images/cyberGaurdbg.png') center center/cover no-repeat;
+  position: relative;
+  overflow: hidden;
+  padding: 80px 0;
+}
+
+.loginFormContainer {
+  position: relative;
+  z-index: 10;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.forgotPasswordLink {
+  color: #55c1b7;
+  text-decoration: none;
+  font-size: 12px;
+  transition: all 0.2s ease-in-out;
+}
+
+.forgotPasswordLink:hover {
+  color: #ff5722;
+  text-decoration: underline;
+}
+
+.loginBtn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+}
+
+.loginBtn:hover::after {
+  animation: shimmer 1.5s infinite;
+}
